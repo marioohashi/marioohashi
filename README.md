@@ -40,7 +40,6 @@ I work mainly with **React.js**, **TypeScript**, **Node.js**, and **.NET/C#**, f
 
 ## 📫 Let’s connect
 
-- **Email:** mario.ohashi@gmail.com  
-- **Location:** Curitiba, Paraná – Brazil  
+[![https://www.linkedin.com/in/marioohashi](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/marioohashi)- **Location:** Curitiba, Paraná – Brazil  
 - **Languages:** Portuguese (Native), English (Advanced), Spanish (Intermediate)
 
