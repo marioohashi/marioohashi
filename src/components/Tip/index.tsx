@@ -7,9 +7,9 @@ type Props = {
 export function Tip({tip}: Props) {
   return (
     <div className={styles.tip}>
-      <img src={tipIcon} alt="iconde de dica" />
+      <img src={tipIcon} alt="Tip icon" />
       <div>
-        <h3>Dica</h3>
+        <h3>Tip</h3>
         <p>{tip}</p>
       </div>
     </div>
