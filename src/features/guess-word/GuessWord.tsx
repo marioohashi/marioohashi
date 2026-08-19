@@ -1,12 +1,12 @@
-import { WORDS, type Challenge } from '../utils/words-en'
+import { WORDS, type Challenge } from '../../utils/words-en'
 import { useEffect, useMemo, useState } from 'react'
-import { Header } from '../components/Header'
-import { Tip } from '../components/Tip'
-import { Letter } from '../components/Letter'
-import { Input } from '../components/Input'
-import { Button } from '../components/Button'
-import { LettersUsed, type LetterUsedProps } from '../components/LettersUsed'
-import {Navbar} from '../components/Navbar'
+import { GameHeader } from './components/GameHeader'
+import { Tip } from './components/Tip'
+import { Letter } from './components/Letter'
+import { LetterInput } from './components/LetterInput'
+import { Button } from './components/Button'
+import { LettersUsed, type LetterUsedProps } from './components/LettersUsed'
+import {Navbar} from '../../components/layout/Navbar'
 
 export default function GuessWord() {
   const [letter, setLetter] = useState('')
@@ -171,7 +171,7 @@ export default function GuessWord() {
       <main className="max-w-xl w-full bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
               <Navbar/>
 
-        <Header
+        <GameHeader
           key={gameId}
           current={wrongLettersCount}
           max={maxAttempts}
@@ -210,7 +210,7 @@ export default function GuessWord() {
             Guess
           </h4>
           <div className="flex items-center justify-center gap-3 max-w-xs mx-auto">
-            <Input
+            <LetterInput
               autoFocus
               maxLength={1}
               placeholder="?"

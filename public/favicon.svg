@@ -1,25 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
-  <!-- Fundo Slate-950 com borda suave -->
+  <!-- Fundo Dark Slate -->
   <rect width="512" height="512" rx="128" fill="#020617"/>
-  <rect width="504" height="504" x="4" y="4" rx="124" stroke="#1e293b" stroke-width="8"/>
+  <rect width="500" height="500" x="6" y="6" rx="122" stroke="#1e293b" stroke-width="12"/>
 
-  <!-- Texto <Ohashi/> com Gradiente Azul/Verde -->
+  <!-- Katakana マリオ (Mario) -->
   <text
     x="50%"
     y="52%"
     dominant-baseline="central"
     text-anchor="middle"
-    font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
+    font-family="'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif"
     font-weight="900"
-    font-size="78"
-    letter-spacing="-3"
-    fill="url(#ohashi-gradient)"
+    font-size="160"
+    letter-spacing="2"
+    fill="url(#katakana-gradient)"
   >
-    &lt;Ohashi/&gt;
+    マリオ
   </text>
 
   <defs>
-    <linearGradient id="ohashi-gradient" x1="30" y1="256" x2="482" y2="256" gradientUnits="userSpaceOnUse">
+    <linearGradient id="katakana-gradient" x1="50" y1="100" x2="460" y2="400" gradientUnits="userSpaceOnUse">
       <stop stop-color="#60A5FA"/>
       <stop offset="0.5" stop-color="#2DD4BF"/>
       <stop offset="1" stop-color="#34D399"/>

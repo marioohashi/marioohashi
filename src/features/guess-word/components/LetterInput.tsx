@@ -1,6 +1,6 @@
 type Props = React.ComponentProps<"input">
 
-export function Input({ ...rest }: Props) {
+export function LetterInput({ ...rest }: Props) {
   return (
     <input
       type="text"

@@ -1,4 +1,4 @@
-import tipIcon from '../../assets/tip.svg'
+import tipIcon from '../../../assets/tip.svg'
 type Props = {
   tip: string
 }

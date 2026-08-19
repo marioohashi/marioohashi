@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import restart from '../../assets/restart.svg'
+import restart from '../../../assets/restart.svg'
 
 type Props = {
   current: number
@@ -7,7 +7,7 @@ type Props = {
   onRestart: () => void
 }
 
-export function Header({ current, max, onRestart }: Props) {
+export function GameHeader({ current, max, onRestart }: Props) {
   const title = "WORD GUESS".split("")
 
   function randomColor() {

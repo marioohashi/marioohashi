@@ -1,4 +1,4 @@
-import { Letter } from '../Letter'
+import { Letter } from './Letter'
 
 export type LetterUsedProps = {
   value: string

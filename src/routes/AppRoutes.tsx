@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router"
 import { Home } from "../pages/Home"
 import { Products } from "../pages/Products";
-import GuessWord from "../pages/GuessWord"
+import GuessWord from "../features/guess-word/GuessWord"
 import { NotFound } from "../pages/NotFound";
 import { About } from "../pages/About";
 
