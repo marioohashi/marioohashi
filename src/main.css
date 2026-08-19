@@ -1,4 +1,6 @@
-:root {
+@import "tailwindcss";
+
+/* :root {
     font-size: 16px
 }
 
@@ -11,6 +13,9 @@
 body {
     background-color: #f5f5fa;
     font-family: "Noto Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 input,button {
@@ -24,4 +29,4 @@ button {
 
 button:hover {
     filter: brightness(0.9);
-}
+} */
