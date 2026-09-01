@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Fundo Dark Slate -->
+  <rect width="512" height="512" rx="128" fill="#020617"/>
+  <rect width="500" height="500" x="6" y="6" rx="122" stroke="#1e293b" stroke-width="12"/>
+
+  <!-- Katakana マリオ (Mario) -->
+  <text
+    x="50%"
+    y="52%"
+    dominant-baseline="central"
+    text-anchor="middle"
+    font-family="'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif"
+    font-weight="900"
+    font-size="160"
+    letter-spacing="2"
+    fill="url(#katakana-gradient)"
+  >
+    マリオ
+  </text>
+
+  <defs>
+    <linearGradient id="katakana-gradient" x1="50" y1="100" x2="460" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60A5FA"/>
+      <stop offset="0.5" stop-color="#2DD4BF"/>
+      <stop offset="1" stop-color="#34D399"/>
+    </linearGradient>
+  </defs>
+</svg>

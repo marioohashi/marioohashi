@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
+
+.isShaking {
+  animation: shake 300ms ease-in-out;
+}
+/* :root {
+    font-size: 16px
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f5fa;
+    font-family: "Noto Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input,button {
+    font-family: "Noto Sans", sans-serif;
+}
+
+button {
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+button:hover {
+    filter: brightness(0.9);
+} */
