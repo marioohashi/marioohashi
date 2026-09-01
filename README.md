@@ -43,3 +43,4 @@ I work mainly with **React.js**, **TypeScript**, **Node.js**, and **.NET/C#**, f
 [![https://www.linkedin.com/in/marioohashi](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/marioohashi)- **Location:** Curitiba, Paraná – Brazil  
 - **Languages:** Portuguese (Native), English (Advanced), Spanish (Intermediate)
 
+Portfolio: https://marioohashi.vercel.app/
