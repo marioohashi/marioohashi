@@ -10,8 +10,7 @@ export function Player({ position }: PlayerProps) {
     const [frameIndex, setFrameIndex] = useState(0);
 
     useEffect(() => {
-        let movingTimeout: NodeJS.Timeout;
-
+        let movingTimeout: ReturnType<typeof setTimeout>;
         const handleKeyDown = (e: KeyboardEvent) => {
             setIsMoving(true);
 

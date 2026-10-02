@@ -121,31 +121,6 @@ export function GameContainer() {
         }
     };
 
-    const movePlayer = (direction: 'up' | 'down' | 'left' | 'right') => {
-        const speed = 0.4;
- 
-        setPlayerPosition((prev) => {
-            let { x, y } = prev;
- 
-            switch (direction) {
-                case 'up':
-                    y = Math.max(5, y - speed);
-                    break;
-                case 'down':
-                    y = Math.min(85, y + speed);
-                    break;
-                case 'left':
-                    x = Math.max(5, x - speed);
-                    break;
-                case 'right':
-                    x = Math.min(90, x + speed);
-                    break;
-            }
- 
-            return { x, y };
-        });
-    };
-
     const touchStart = useRef({ x: 0, y: 0 });
  
     const handleTouchStart = (e: React.TouchEvent) => {
