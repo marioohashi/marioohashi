@@ -31,15 +31,15 @@ I work mainly with **React.js**, **TypeScript**, **Node.js**, and **.NET/C#**, f
 
 ## 🌐 What I’m focusing on
 
-- Scalable **Full Stack** applications with React, Node.js, and .NET/C#  
-- Clean, maintainable code and component-driven architectures  
-- Interfaces that balance **performance, accessibility, and visual clarity**  
+- Scalable **Full Stack** applications with React, Node.js, and .NET/C#
+- Clean, maintainable code and component-driven architectures
+- Interfaces that balance **performance, accessibility, and visual clarity**
 - Bridging design and engineering to ship products that feel polished end-to-end
 
 ---
 
 ## 📫 Let’s connect
 
-[![https://www.linkedin.com/in/marioohashi](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/marioohashi)- **Location:** Curitiba, Paraná – Brazil  
-- **Languages:** Portuguese (Native), English (Advanced), Spanish (Intermediate)
+[![https://www.linkedin.com/in/marioohashi](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/marioohashi)- **Location:** Curitiba, Paraná – Brazil
 
+- **Languages:** Portuguese (Native), English (Advanced), Spanish (Intermediate)
