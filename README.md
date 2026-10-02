@@ -44,3 +44,7 @@ I work mainly with **React.js**, **TypeScript**, **Node.js**, and **.NET/C#**, f
 
 - **Languages:** Portuguese (Native), English (Advanced), Spanish (Intermediate)
 
+## 📫 Portfolio
+
+- **Portfolio:** https://marioohashi.vercel.app/
+- **Adote2Pets:** https://pet-adoption-platform-web.vercel.app/
