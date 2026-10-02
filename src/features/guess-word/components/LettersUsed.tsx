@@ -17,11 +17,11 @@ export function LettersUsed({ data }: Props) {
       </h5>
       <div className="flex flex-wrap items-center justify-center gap-2 max-h-32 overflow-y-auto p-1">
         {data.map(({ value, correct }) => (
-          <Letter 
+          <Letter
             key={value}
-            value={value} 
-            size="small" 
-            color={correct ? "correct" : "wrong"} 
+            value={value}
+            size="small"
+            color={correct ? "correct" : "wrong"}
           />
         ))}
       </div>

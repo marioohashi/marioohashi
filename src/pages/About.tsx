@@ -1,5 +1,4 @@
-import { Link } from 'react-router'
-import { Navbar } from '../components/layout/Navbar';
+import { Link } from 'react-router';
 
 export function About() {
   const techStack = {
@@ -42,7 +41,9 @@ export function About() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-between p-6 sm:p-12">
       <main className="max-w-4xl w-full space-y-12 my-auto">
-      <Navbar/>        
+        {/* Navbar opcional se já tiver criada */}
+        {/* <Navbar /> */}
+
         <section className="space-y-4">
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
@@ -158,7 +159,7 @@ export function About() {
             <p className="text-xs text-slate-400">Try out the Word Guess game built with React & Tailwind.</p>
           </div>
           <Link
-            to="/guessword"
+            to="/portfolio/guessword"
             className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition-colors shrink-0 shadow-lg shadow-blue-600/20"
           >
             Play Guess Word &rarr;
