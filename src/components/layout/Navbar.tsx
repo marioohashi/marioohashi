@@ -33,24 +33,6 @@ export function Navbar() {
                 {/* Links de navegação interna do portfólio */}
                 <nav className="flex items-center gap-3 text-xs">
                     <Link
-                        to="/portfolio"
-                        className={`px-3 py-1.5 rounded-lg border transition-all ${isHome
-                            ? 'bg-sky-500/10 border-sky-500/30 text-sky-400 font-bold'
-                            : 'bg-slate-900 border-slate-800 text-slate-300 hover:border-slate-700'
-                            }`}
-                    >
-                        Projects
-                    </Link>
-                    <Link
-                        to="/portfolio/about"
-                        className={`px-3 py-1.5 rounded-lg border transition-all ${isAbout
-                            ? 'bg-sky-500/10 border-sky-500/30 text-sky-400 font-bold'
-                            : 'bg-slate-900 border-slate-800 text-slate-300 hover:border-slate-700'
-                            }`}
-                    >
-                        About Me
-                    </Link>
-                    <Link
                         to="/game"
                         className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 transition-all ml-2"
                     >

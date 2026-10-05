@@ -18,7 +18,6 @@ export function PixelBox({ position, size, label, icon, onClick }: {
         >
             {icon && <span className="text-xl mb-1">{icon}</span>}
             <span className="text-[9px] uppercase font-bold tracking-wider text-center px-1">{label}</span>
-            <span>teste</span>
         </div>
     );
 }

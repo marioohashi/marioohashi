@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router';
+import { Routes, Route, Navigate } from 'react-router';
 import { TitleScreen } from '../pages/TitleScreen';
 import { GamePage } from '../pages/GamePage';
 import { PortfolioLayout } from '../pages/PortfolioLayout';
@@ -8,10 +8,13 @@ import { About } from '../pages/About';
 import { NotFound } from '../pages/NotFound';
 
 export function AppRoutes() {
+    console.log(import.meta.env.DEV)
+
     return (
         <Routes>
             {/* Rota Raiz: O Menu Principal / Title Screen */}
-            <Route path="/" element={<TitleScreen />} />
+            <Route path="/" element=
+                {import.meta.env.DEV ? <TitleScreen /> : <Navigate to="/portfolio" replace />} />
 
             {/* Rota do Jogo Interativo (Overworld) */}
             <Route path="/game" element={<GamePage />} />
