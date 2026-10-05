@@ -1,4 +1,4 @@
-import { Link } from 'react-router'
+import { Link } from 'react-router';
 
 export function Home() {
   const techStack = [
@@ -15,25 +15,16 @@ export function Home() {
       title: 'Guess Word Game',
       description: 'Interactive word-guessing game featuring real-time state management, dynamic hints, and attempt tracking.',
       tags: ['React', 'TypeScript', 'Tailwind'],
-      path: '/guessword',
+      path: '/portfolio/guessword',
       status: 'Ready to Play',
       icon: '🎮',
       active: true,
     },
     {
-      title: 'GitHub Profile Finder',
-      description: 'GitHub profile finder consuming REST API data to display bios, popular repositories, and stats.',
-      tags: ['REST API', 'Async/Await', 'React'],
-      path: '/github-finder',
-      status: 'Coming Soon',
-      icon: '🔍',
-      active: false,
-    },
-    {
-      title: 'Dev Utilities',
-      description: 'Collection of handy developer tools, including a JSON formatter and CSS gradient generator.',
-      tags: ['Clipboard API', 'Utilities'],
-      path: '/tools',
+      title: 'Pet Adoption Platform',
+      description: 'Platform connecting potential pet adopters with available pets, featuring detailed profiles and adoption workflows.',
+      tags: ['React', 'TypeScript', 'Tailwind'],
+      path: '#',
       status: 'Planned',
       icon: '🛠️',
       active: false,
@@ -49,11 +40,11 @@ export function Home() {
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             Available for new opportunities
           </div>
-          
+
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight">
             Hi, I'm <span className="bg-gradient-to-r from-blue-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">Mario Ohashi</span> 👋
           </h1>
-          
+
           <p className="text-slate-400 text-base sm:text-lg max-w-2xl leading-relaxed">
             Full Stack Developer focused on building modern, fast, and highly interactive web applications using the React, TypeScript, and Node.js ecosystems.
           </p>
@@ -114,11 +105,10 @@ export function Home() {
                   <div className="flex items-center justify-between">
                     <span className="text-2xl">{project.icon}</span>
                     <span
-                      className={`text-[10px] font-bold px-2 py-0.5 rounded-md border ${
-                        project.active
-                          ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
-                          : 'bg-slate-800 text-slate-400 border-slate-700'
-                      }`}
+                      className={`text-[10px] font-bold px-2 py-0.5 rounded-md border ${project.active
+                        ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+                        : 'bg-slate-800 text-slate-400 border-slate-700'
+                        }`}
                     >
                       {project.status}
                     </span>

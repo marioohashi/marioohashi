@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useState } from 'react'
 import restart from '../../../assets/restart.svg'
 
 type Props = {
@@ -7,28 +7,26 @@ type Props = {
   onRestart: () => void
 }
 
+const TITLE_COLORS = ["#FF6B6B", "#4ECDC4", "#556EE6", "#FFD93D", "#6BCB77", "#FF9F1C"]
+
+function randomColor() {
+  return TITLE_COLORS[Math.floor(Math.random() * TITLE_COLORS.length)]
+}
+
+function randomRotation() {
+  const min = -10
+  const max = 10
+  const degrees = Math.floor(Math.random() * (max - min + 1)) + min
+  return `rotate(${degrees}deg)`
+}
+
 export function GameHeader({ current, max, onRestart }: Props) {
   const title = "WORD GUESS".split("")
 
-  function randomColor() {
-    const colors = ["#FF6B6B", "#4ECDC4", "#556EE6", "#FFD93D", "#6BCB77", "#FF9F1C"]
-    return colors[Math.floor(Math.random() * colors.length)]
-  }
-
-  function randomRotation() {
-    const min = -10
-    const max = 10
-    const degrees = Math.floor(Math.random() * (max - min + 1)) + min
-    return `rotate(${degrees}deg)`
-  }
-
-  // Memoriza o estilo dos tiles para não sorteá-los novamente a cada digitação
-  const tileStyles = useMemo(() => {
-    return title.map(() => ({
-      backgroundColor: randomColor(),
-      transform: randomRotation()
-    }))
-  }, [])
+  const [tileStyles] = useState(() => title.map(() => ({
+    backgroundColor: randomColor(),
+    transform: randomRotation()
+  })))
 
   return (
     <div className="flex flex-col items-center text-center space-y-4 pb-4 border-b border-slate-800">
@@ -59,8 +57,8 @@ export function GameHeader({ current, max, onRestart }: Props) {
           <strong className="text-slate-100 font-bold text-base">{current}</strong> of {max} wrong attempts
         </span>
 
-        <button 
-          type="button" 
+        <button
+          type="button"
           onClick={onRestart}
           className="p-2 rounded-xl bg-slate-800 border border-slate-700/60 hover:bg-slate-700 hover:border-slate-600 transition-colors cursor-pointer group"
           title="Restart Game"

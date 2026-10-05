@@ -1,4 +1,4 @@
-import { WORDS, type Challenge } from '../../utils/words-en'
+import { WORDS, type Challenge } from './utils/words-en'
 import { useEffect, useMemo, useState } from 'react'
 import { GameHeader } from './components/GameHeader'
 import { Tip } from './components/Tip'
@@ -6,7 +6,7 @@ import { Letter } from './components/Letter'
 import { LetterInput } from './components/LetterInput'
 import { Button } from './components/Button'
 import { LettersUsed, type LetterUsedProps } from './components/LettersUsed'
-import { Navbar } from '../../components/layout/Navbar'
+import { Link } from 'react-router';
 
 export default function GuessWord() {
   const [letter, setLetter] = useState('')
@@ -16,7 +16,6 @@ export default function GuessWord() {
   const [gameId, setGameId] = useState(0)
   const [isShaking, setIsShaking] = useState(false)
 
-  // Estado para substituir o alert nativo do navegador
   const [alertMessage, setAlertMessage] = useState<string | null>(null)
 
   const ATTEMPT_MARGIN = 5
@@ -124,116 +123,127 @@ export default function GuessWord() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center p-4 relative">
-      {alertMessage && (
-        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-slate-950/80 backdrop-blur-md p-6 text-center">
-          <div className="bg-slate-900 border border-amber-500/40 p-6 sm:p-8 rounded-3xl shadow-2xl max-w-sm w-full space-y-5">
-            <span className="text-4xl block">⚠️</span>
-            <h3 className="text-xl font-bold text-amber-400">
-              Attention
-            </h3>
-            <p className="text-slate-300 text-sm font-medium leading-relaxed">
-              {alertMessage}
-            </p>
-            <div className="pt-2">
-              <Button title="Got it" onClick={() => setAlertMessage(null)} />
+    <div className="min-h-screen bg-slate-950 text-slate-100 p-6 sm:p-12 font-mono">
+      <div className="max-w-4xl mx-auto mb-6">
+        <Link
+          to="/portfolio"
+          className="inline-flex items-center px-4 py-2 bg-slate-900 border border-slate-800 rounded-lg text-xs text-sky-400 hover:bg-slate-800 transition-colors shadow-md"
+        >
+          &larr; Back to Portfolio
+        </Link>
+      </div>
+
+      <div className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center p-4 relative">
+
+
+        {alertMessage && (
+          <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-slate-950/80 backdrop-blur-md p-6 text-center">
+            <div className="bg-slate-900 border border-amber-500/40 p-6 sm:p-8 rounded-3xl shadow-2xl max-w-sm w-full space-y-5">
+              <span className="text-4xl block">⚠️</span>
+              <h3 className="text-xl font-bold text-amber-400">
+                Attention
+              </h3>
+              <p className="text-slate-300 text-sm font-medium leading-relaxed">
+                {alertMessage}
+              </p>
+              <div className="pt-2">
+                <Button title="Got it" onClick={() => setAlertMessage(null)} />
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {gameStatus === "won" && (
-        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-slate-950/80 backdrop-blur-md p-6 text-center">
-          <div className="bg-slate-900 border border-emerald-500/30 p-8 rounded-3xl shadow-2xl max-w-sm w-full space-y-6">
-            <span className="text-5xl block">🎉</span>
-            <h2 className="text-3xl font-extrabold text-emerald-400">
-              Congratulations!
-            </h2>
-            <p className="text-slate-400 text-sm">
-              You guessed the word correctly!
-            </p>
-            <div className="pt-2">
-              <Button title="Play Again" onClick={startGame} />
+        {gameStatus === "won" && (
+          <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-slate-950/80 backdrop-blur-md p-6 text-center">
+            <div className="bg-slate-900 border border-emerald-500/30 p-8 rounded-3xl shadow-2xl max-w-sm w-full space-y-6">
+              <span className="text-5xl block">🎉</span>
+              <h2 className="text-3xl font-extrabold text-emerald-400">
+                Congratulations!
+              </h2>
+              <p className="text-slate-400 text-sm">
+                You guessed the word correctly!
+              </p>
+              <div className="pt-2">
+                <Button title="Play Again" onClick={startGame} />
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {gameStatus === "lost" && (
-        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-slate-950/80 backdrop-blur-md p-6 text-center">
-          <div className="bg-slate-900 border border-rose-500/30 p-8 rounded-3xl shadow-2xl max-w-sm w-full space-y-6">
-            <span className="text-5xl block">💀</span>
-            <h2 className="text-3xl font-extrabold text-rose-500">
-              You Lost!
-            </h2>
-            <p className="text-slate-400 text-sm">
-              The word was: <strong className="text-slate-200 uppercase">{challenge.word}</strong>
-            </p>
-            <div className="pt-2">
-              <Button title="Try Again" onClick={startGame} />
+        {gameStatus === "lost" && (
+          <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-slate-950/80 backdrop-blur-md p-6 text-center">
+            <div className="bg-slate-900 border border-rose-500/30 p-8 rounded-3xl shadow-2xl max-w-sm w-full space-y-6">
+              <span className="text-5xl block">💀</span>
+              <h2 className="text-3xl font-extrabold text-rose-500">
+                You Lost!
+              </h2>
+              <p className="text-slate-400 text-sm">
+                The word was: <strong className="text-slate-200 uppercase">{challenge.word}</strong>
+              </p>
+              <div className="pt-2">
+                <Button title="Try Again" onClick={startGame} />
+              </div>
             </div>
           </div>
-        </div>
-      )}
-      <main className="max-w-xl w-full bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
-        <Navbar />
+        )}
+        <main className="max-w-xl w-full bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
 
-        <GameHeader
-          key={gameId}
-          current={wrongLettersCount}
-          max={maxAttempts}
-          onRestart={handleRestartGame}
-        />
+          <GameHeader
+            key={gameId}
+            current={wrongLettersCount}
+            max={maxAttempts}
+            onRestart={handleRestartGame}
+          />
 
-        <Tip tip={challenge.tip} />
+          <Tip tip={challenge.tip} />
 
-        {/* Display das Letras da Palavra */}
-        <div className={`flex flex-wrap items-center justify-center gap-2 sm:gap-3 py-4 ${isShaking ? 'isShaking' : ''}`}>
-          {challenge.word.split('').map((char, index) => {
-            const letterUsed = lettersUsed.find(
-              used => used.value.toUpperCase() === char.toUpperCase()
-            )
+          <div className={`flex flex-wrap items-center justify-center gap-2 sm:gap-3 py-4 ${isShaking ? 'isShaking' : ''}`}>
+            {challenge.word.split('').map((char, index) => {
+              const letterUsed = lettersUsed.find(
+                used => used.value.toUpperCase() === char.toUpperCase()
+              )
 
-            const value = letterUsed ? letterUsed.value : ''
-            const color = !letterUsed
-              ? 'default'
-              : letterUsed.correct
-                ? 'correct'
-                : 'wrong'
+              const value = letterUsed ? letterUsed.value : ''
+              const color = !letterUsed
+                ? 'default'
+                : letterUsed.correct
+                  ? 'correct'
+                  : 'wrong'
 
-            return (
-              <Letter
-                key={index}
-                value={value}
-                color={color} />
-            )
-          })}
-        </div>
-
-        {/* Campo de Palpite */}
-        <div className="space-y-3 pt-2">
-          <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wider text-center">
-            Guess
-          </h4>
-          <div className="flex items-center justify-center gap-3 max-w-xs mx-auto" >
-            <LetterInput
-              autoFocus
-              maxLength={1}
-              placeholder="?"
-              value={letter}
-              onChange={e => setLetter(e.target.value)}
-              onKeyDown={e => {
-                if (e.key === "Enter") {
-                  handleConfirm()
-                }
-              }}
-            />
-            <Button title="Confirm" onClick={handleConfirm} />
+              return (
+                <Letter
+                  key={index}
+                  value={value}
+                  color={color} />
+              )
+            })}
           </div>
-        </div>
 
-        <LettersUsed data={lettersUsed} />
-      </main>
+          {/* Campo de Palpite */}
+          <div className="space-y-3 pt-2">
+            <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wider text-center">
+              Guess
+            </h4>
+            <div className="flex items-center justify-center gap-3 max-w-xs mx-auto" >
+              <LetterInput
+                autoFocus
+                maxLength={1}
+                placeholder="?"
+                value={letter}
+                onChange={e => setLetter(e.target.value)}
+                onKeyDown={e => {
+                  if (e.key === "Enter") {
+                    handleConfirm()
+                  }
+                }}
+              />
+              <Button title="Confirm" onClick={handleConfirm} />
+            </div>
+          </div>
+
+          <LettersUsed data={lettersUsed} />
+        </main>
+      </div>
     </div>
   )
 }

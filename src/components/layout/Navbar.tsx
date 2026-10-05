@@ -1,40 +1,45 @@
-import { Link, useLocation } from 'react-router'
+import { Link, useLocation } from 'react-router';
 
 export function Navbar() {
-  const location = useLocation()
+    const location = useLocation();
 
-  const links = [
-    { label: 'Home', path: '/' },
-    { label: 'About', path: '/about' },
-    { label: 'Guess Word', path: '/guessword' },
-  ]
+    const isHome = location.pathname === '/portfolio';
+    const isAbout = location.pathname === '/portfolio/about';
+    const isGuessWord = location.pathname === '/portfolio/guessword';
 
-  return (
-    <header className="border-b border-slate-800 bg-slate-900/80 backdrop-blur-md sticky top-0 z-40">
-      <div className="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
-        <Link to="/" className="font-bold text-base text-blue-400 hover:text-blue-300">
-          &lt;MarioOhashi /&gt;
-        </Link>
+    return (
+        <header className="w-full border-b border-slate-800 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50 px-6 py-4 font-mono">
+            <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
 
-        <nav className="flex items-center gap-2">
-          {links.map((link) => {
-            const isActive = location.pathname === link.path
-            return (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
-                  isActive
-                    ? 'bg-slate-800 text-slate-100'
-                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
-                }`}
-              >
-                {link.label}
-              </Link>
-            )
-          })}
-        </nav>
-      </div>
-    </header>
-  )
+                {/* Hierarquia / Breadcrumbs */}
+                <div className="flex items-center gap-2 text-xs text-slate-400">
+                    <Link to="/" className="hover:text-sky-400 transition-colors">
+                        🏠 Menu
+                    </Link>
+                    <span>/</span>
+                    <Link to="/portfolio" className="hover:text-sky-400 transition-colors">
+                        Portfolio View
+                    </Link>
+                    {!isHome && (
+                        <>
+                            <span>/</span>
+                            <span className="text-sky-400 capitalize">
+                                {isAbout ? 'About' : isGuessWord ? 'Guess Word Game' : 'Page'}
+                            </span>
+                        </>
+                    )}
+                </div>
+
+                {/* Links de navegação interna do portfólio */}
+                <nav className="flex items-center gap-3 text-xs">
+                    <Link
+                        to="/game"
+                        className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 transition-all ml-2"
+                    >
+                        ⚡ Switch to Game
+                    </Link>
+                </nav>
+            </div>
+        </header>
+    );
 }
