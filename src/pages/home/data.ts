@@ -8,7 +8,7 @@ export const works = [
     title: 'Full-Stack Web Developer',
     place: 'ExxonMobil',
     period: '2023 — 2025',
-    note: '3 yrs & counting in my toolbox',
+    note: '3 yrs of enterprise impact',
     summary:
       'Intern turned Full Stack Developer, building web applications for global operations.',
     details:
