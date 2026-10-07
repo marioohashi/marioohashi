@@ -1,6 +1,14 @@
+import type { ComponentType } from 'react';
+
 export interface Position {
     x: number;
     y: number;
+}
+
+export interface GameEntityRendererProps {
+    position: Position;
+    direction?: 'down' | 'up' | 'left' | 'right';
+    isMoving?: boolean;
 }
 
 export interface GameEntity {
@@ -8,7 +16,7 @@ export interface GameEntity {
     size?: [number, number];
     label?: string;
     icon?: string;
-    renderer: any;
+    renderer: ComponentType<GameEntityRendererProps>;
     onClick?: () => void;
 }
 
@@ -19,5 +27,7 @@ export interface LocationData {
     x: number;
     y: number;
     icon: string;
-    category: string;
+    category: 'start' | 'experience' | 'projects' | 'skills' | 'tavern';
+    destination: string;
+    action: string;
 }

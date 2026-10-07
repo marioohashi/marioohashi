@@ -1,23 +1,32 @@
 import type { Position } from '../types/game';
 
-export const MovementSystem = (entities: any, { input }: { input: any }) => {
-    const { payload } = input.find((x: any) => x.name === 'keydown') || {};
-    const player = entities.player;
+interface KeyboardInput {
+    name: string;
+    payload?: { key: string };
+}
 
-    if (player && payload) {
+export const MovementSystem = (
+    entities: Record<string, { position: Position }>,
+    { input }: { input: KeyboardInput[] },
+) => {
+    const payload = input.find((event) => event.name === 'keydown')?.payload;
+    const player = entities.player;
+    const key = payload?.key.toLowerCase();
+
+    if (player && key) {
         const speed = 4;
         const currentPos: Position = player.position;
 
-        if (payload.key === 'ArrowUp' || payload.key === 'w') {
+        if (key === 'arrowup' || key === 'w') {
             currentPos.y = Math.max(5, currentPos.y - speed);
         }
-        if (payload.key === 'ArrowDown' || payload.key === 's') {
+        if (key === 'arrowdown' || key === 's') {
             currentPos.y = Math.min(85, currentPos.y + speed);
         }
-        if (payload.key === 'ArrowLeft' || payload.key === 'a') {
+        if (key === 'arrowleft' || key === 'a') {
             currentPos.x = Math.max(5, currentPos.x - speed);
         }
-        if (payload.key === 'ArrowRight' || payload.key === 'd') {
+        if (key === 'arrowright' || key === 'd') {
             currentPos.x = Math.min(90, currentPos.x + speed);
         }
     }

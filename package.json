@@ -11,6 +11,8 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@google/genai": "^2.27.0",
+    "framer-motion": "^14.0.0",
     "pixelarticons": "^2.4.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",

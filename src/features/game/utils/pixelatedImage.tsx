@@ -50,7 +50,9 @@ export function PixelatedImage({ src, alt, pixelSize = 8, className = "" }: Pixe
     return (
         <canvas
             ref={canvasRef}
+            role={alt ? 'img' : undefined}
             aria-label={alt}
+            aria-hidden={alt ? undefined : true}
             className={`w-full h-full object-contain ${className}`}
             style={{ imageRendering: 'pixelated' }}
         />
