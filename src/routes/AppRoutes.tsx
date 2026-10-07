@@ -8,8 +8,6 @@ import { About } from '../pages/About';
 import { NotFound } from '../pages/NotFound';
 
 export function AppRoutes() {
-    console.log(import.meta.env.DEV)
-
     return (
         <Routes>
             {/* Rota Raiz: O Menu Principal / Title Screen */}

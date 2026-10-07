@@ -90,7 +90,7 @@ export const inventory = [
     skills: [
       { name: 'Git', logo: icon('git', 'F05032') },
       { name: 'Figma', logo: icon('figma', 'F24E1E') },
-      { name: 'Azure DevOps', logo: icon('azuredevops', '0078D7') },
+      { name: 'Azure DevOps' },
       { name: 'Software architecture' },
       { name: 'Creative direction' },
     ],
@@ -103,4 +103,19 @@ export const sections = [
   { id: 'projects', label: 'Projects', key: '03' },
   { id: 'inventory', label: 'My pack', key: '04' },
   { id: 'tavern', label: 'Contact', key: '05' },
+];
+
+
+export const RANDOM_NOTES = [
+  "idea: design systems that don't feel like design systems ✎",
+  "☕ french press tip: water at 92°C, 4 min steep time.",
+  "code rule: make it work, make it right, make it fast.",
+  "focus: simplicity is the ultimate sophistication ✦",
+  "lens choice matters, but the angle and the intention tell the real story 📷",
+  "revisiting legacy code is like deciphering an ancient archaeological map 🗺️",
+  "debugging at 2am: when you become both the detective and the suspect 🔍",
+  "design is not just what it looks like, it's how it orchestrates the experience ✨",
+  "curitiba weather: four seasons in a single afternoon 🌦️",
+  "git commit -m 'fixed that one weird bug nobody understands' 🚀",
+  "tribute to details: every pixel has a purpose, every function has a reason 🎯"
 ];

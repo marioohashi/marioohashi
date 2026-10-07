@@ -1,7 +1,8 @@
 import { GoogleGenAI } from '@google/genai';
 import { PROFILE_CONTEXT } from './profile.js';
 
-const MODEL = 'gemini-2.5-flash';
+const FALLBACK_MODEL = 'gemini-3.7-flash';
+const MODEL = 'gemini-3.8-flash';
 const MAX_MESSAGE_LENGTH = 500;
 
 const SYSTEM_INSTRUCTION = `
@@ -65,17 +66,25 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
     return res.status(500).json({ error: 'The assistant is not configured yet.' });
   }
 
-  try {
-    const ai = new GoogleGenAI({ apiKey });
-    const response = await ai.models.generateContent({
-      model: MODEL,
-      contents: [{ role: 'user', parts: [{ text: message }] }],
-      config: { systemInstruction: SYSTEM_INSTRUCTION, temperature: 0.3, maxOutputTokens: 600 },
-    });
+  const ai = new GoogleGenAI({ apiKey });
+  const models = [MODEL, FALLBACK_MODEL];
+  let lastError: unknown;
 
-    return res.status(200).json({ reply: response.text ?? '' });
-  } catch (error) {
-    console.error('AI API error:', error);
-    return res.status(500).json({ error: 'Something went wrong while generating the answer.' });
+  // Retry transient failures (e.g. 503 high demand), falling back to a second model.
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const response = await ai.models.generateContent({
+        model: models[attempt === 0 ? 0 : 1],
+        contents: [{ role: 'user', parts: [{ text: message }] }],
+        config: { systemInstruction: SYSTEM_INSTRUCTION, temperature: 0.3, maxOutputTokens: 600 },
+      });
+      return res.status(200).json({ reply: response.text ?? '' });
+    } catch (error) {
+      lastError = error;
+      await new Promise((resolve) => setTimeout(resolve, 600 * (attempt + 1)));
+    }
   }
+
+  console.error('AI API error:', lastError);
+  return res.status(503).json({ error: 'The assistant is busy right now. Please try again in a moment.' });
 }

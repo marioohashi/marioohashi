@@ -7,6 +7,7 @@ Location: Curitiba, Paraná, Brazil
 Email: mario.ohashi@gmail.com
 LinkedIn: https://www.linkedin.com/in/marioohashi/
 GitHub: https://github.com/marioohashi
+Birth Date: 02/26/1987
 
 ## Professional summary
 Versatile Full Stack Developer with a strong background in enterprise digital environments and a solid foundation in modern web technologies. Experienced in delivering scalable web applications and collaborating in global agile teams. Hybrid background in Design, bridging UI/UX and technical execution. Currently focused on high-code web development with React, TypeScript, and Node.js, combining professional engineering experience with continuous backend studies.

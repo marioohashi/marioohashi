@@ -70,22 +70,7 @@ export function Contact() {
         </Drop> */}
 
         <Drop inView rotate={0} delay={0.2} className="sb-contact-wide">
-          <aside className="sb-terminal" aria-labelledby="ai-assistant-title">
-            {/* <span className="sb-tape sb-tape-right" />
-            <div className="sb-code-bar"><i /><i /><i /> <span id="ai-assistant-title">ask-mario.ai</span></div>
-            <div className="sb-terminal-body sb-mono">
-              <p><b>&gt;</b> Ask me about Mario&apos;s career, stack, and projects.</p>
-              <p className="dim">An assistant trained on my profile is coming soon.</p>
-              <div className="sb-ai-input">
-                <input disabled placeholder="Coming soon…" aria-label="Ask the AI assistant (coming soon)" />
-                <button type="button" disabled>Ask</button>
-              </div>
-            </div> */}
-            <InteractiveTerminal />
-            {/* <p className="sb-hand sb-annot sb-annot-ai">
-              <Arrow className="sb-annot-arrow" flip /> in progress!
-            </p> */}
-          </aside>
+          <InteractiveTerminal />
         </Drop>
       </div>
     </section>

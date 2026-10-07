@@ -11,7 +11,7 @@ interface Message {
 export function InteractiveTerminal() {
     const [query, setQuery] = useState('');
     const [messages, setMessages] = useState<Message[]>([
-        { sender: 'ai', text: "Ask me about Mario's career, stack, and projects." }
+        { sender: 'ai', text: "Ask me my career, stack, and projects." }
     ]);
     const [loading, setLoading] = useState(false);
     const logRef = useRef<HTMLDivElement>(null);
@@ -49,38 +49,32 @@ export function InteractiveTerminal() {
     };
 
     return (
-        <aside className="sb-terminal" aria-labelledby="ai-assistant-title">
+        <aside className="sb-paper sb-note" aria-labelledby="ai-assistant-title">
             <span className="sb-tape sb-tape-right" />
-            <div className="sb-code-bar"><i /><i /><i /> <span id="ai-assistant-title">ask-mario.ai</span></div>
-            <div className="sb-terminal-body sb-mono">
-                <div ref={logRef} role="log" aria-live="polite" className="space-y-2 mb-4 max-h-40 overflow-y-auto text-xs pr-1">
-                    {messages.map((m, idx) => (
-                        <p key={idx} className={m.sender === 'user' ? 'text-slate-900 font-semibold' : 'text-slate-700'}>
-                            <b>{m.sender === 'user' ? '>' : '✦'}</b> {m.text}
-                        </p>
-                    ))}
-                    {loading && <p className="dim animate-pulse text-xs"><b>✦</b> Thinking...</p>}
-                </div>
-
-                <form onSubmit={handleSubmit} className="sb-ai-input flex gap-2">
-                    <input
-                        value={query}
-                        onChange={(e) => setQuery(e.target.value)}
-                        placeholder="Ask something about Mario..."
-                        maxLength={MAX_LENGTH}
-                        aria-label="Ask the AI assistant"
-                        disabled={loading}
-                        className="flex-1 bg-transparent border-b border-slate-400 text-xs outline-none py-1 text-slate-900 disabled:opacity-50"
-                    />
-                    <button
-                        type="submit"
-                        disabled={loading || !query.trim()}
-                        className="text-xs font-bold px-3 py-1 bg-slate-900 text-white rounded hover:bg-slate-800 transition-colors disabled:opacity-50 cursor-pointer"
-                    >
-                        Ask
-                    </button>
-                </form>
+            <span className="sb-note-holes" aria-hidden="true"><i /><i /><i /></span>
+            <p id="ai-assistant-title" className="sb-hand sb-note-title">Ask Mario&apos;s AI assistant ✎</p>
+            <div ref={logRef} role="log" aria-live="polite" className="sb-note-log">
+                {messages.map((m, idx) => (
+                    <p key={idx} className={m.sender === 'user' ? 'sb-note-user' : 'sb-note-ai'}>
+                        {m.text}
+                    </p>
+                ))}
+                {loading && <p className="sb-note-ai sb-note-wait">mario: thinking…</p>}
             </div>
+
+            <form onSubmit={handleSubmit} className="sb-note-form">
+                <input
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    placeholder="Ask something about Mario..."
+                    maxLength={MAX_LENGTH}
+                    aria-label="Ask the AI assistant"
+                    disabled={loading}
+                />
+                <button type="submit" className="sb-btn sb-btn-ink" disabled={loading || !query.trim()}>
+                    Ask <span aria-hidden="true">↗</span>
+                </button>
+            </form>
         </aside>
     );
 }
