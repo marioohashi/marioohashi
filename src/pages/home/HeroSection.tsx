@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import tsuruIcon from '../../assets/tsuru-icon.png';
+import tsuruIcon from '/assets/tsuru-icon.png';
 import { Arrow } from './Arrow';
 import { Drop } from './Drop';
 import { DraggableCard } from './DraggableCard';
