@@ -56,6 +56,18 @@ export const projects = [
     mock: 'pets',
     number: '02',
   },
+  {
+    title: 'Griô',
+    type: 'Full-Stack App',
+    description:
+      'A collaborative digital vault for life chapters and cherished memories, featuring secure custom and Google OAuth authentication, interactive edge-to-edge timelines, photo lightboxes, and a full user dashboard.',
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Prisma', 'PostgreSQL', 'Google OAuth'],
+    path: 'https://grio-blush.vercel.app/',
+    action: 'Live Demo',
+    repo: 'https://github.com/marioohashi/grio',
+    mock: 'grio',
+    number: '03',
+  },
 ];
 
 const icon = (slug: string, color: string) =>
