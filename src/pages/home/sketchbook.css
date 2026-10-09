@@ -348,3 +348,19 @@
 @media print {
   .sb-topbar { position: static; }
 }
+
+.sb-spinner {
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  margin-right: 0.35em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: sb-spin 0.7s linear infinite;
+  vertical-align: -0.1em;
+}
+
+@keyframes sb-spin {
+  to { transform: rotate(360deg); }
+}
